@@ -20,33 +20,78 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "50400", 3, {
-	[96231] = "COOLDOWN INTERRUPT", -- Rebuke
-	['SURVIVAL COOLDOWN AURA'] = {
-		PERSONAL = {
-			  498, -- Divine Protection
-			  642, -- Divine Shield
-			 6940, -- Hand of Sacrifice
-			31850, -- Ardent Defender
-			54428, -- Divine Plea
-			86659, -- Ancient Guardian (prot)
+lib:__RegisterSpells("PALADIN", "50400", 4, {
+	COOLDOWN = {
+		AURA = {
+			PERSONAL = {
+				SURVIVAL = {
+					   498, -- Divine Protection
+					   642, -- Divine Shield
+					 31850, -- Ardent Defender
+					 54428, -- Divine Plea
+					 86659, -- Ancient Guardian (prot)
+					113075, -- Symbiosis: Barkskin
+				},
+				BURST = {
+					86698, -- Guardian of Ancient Kings
+					31884, -- Avenging Wrath
+				},
+			},
+			HELPFUL = {
+				SURVIVAL = {
+					   603, -- Lay on Hands
+					  1022, -- Hand of Protection
+					  6940, -- Hand of Sacrifice
+					114039, -- Hand of Purity
+				},
+				 1044, -- Hand of Freedom
+				31821, -- Devotion Aura
+			},
+			HARMFUL = {
+				   853, -- Hammer of Justice
+				105593, -- Fist of Justice
+				114916, -- Execution Sentence
+			},
+			[114165] = "BURST", -- Holy Prism
+			[114158] = "BURST", -- Light's Hammer
 		},
-		HELPFUL = {
-			 1022, -- Hand of Protection
+		INTERRUPT = {
+			96231, -- Rebuke
+			31935, -- Avenger's Shield
 		},
+		[4987] = "DISPEL HELPFUL", -- Cleanse
 	},
 	AURA = {
-		PERSONAL = {
-			[84963] = 'HELPFUL', -- Inquisition
+		HELPFUL = {
+			PERSONAL = {
+				 84963, -- Inquisition
+				 86700, -- Ancient Power
+				 31868, -- Supplication
+				114250, -- Selfless Healer
+			},
+			 20925, -- Sacred Shield
+			 53563, -- Beacon of Light
+			114163, -- Eternal Flame
+		},
+		HARMFUL = {
+			 31801, -- Censure
+			115798, -- Weakened Blows
 		},
 	},
 	RAIDBUFF = {
-		[20217] = 'STATS',   -- Blessing of Kings
-		[19740] = 'MASTERY', -- Blessing of Might
+		[20217] = "STATS",   -- Blessing of Kings
+		[19740] = "MASTERY", -- Blessing of Might
 	},
-	[4987] = "DISPEL HELPFUL COOLDOWN", -- Cleanse
 }, {
 	-- Map aura to provider
+	[115798] = { -- Weakened Blows <=
+		35395, -- Crusader Strike
+		53595, -- Hammer of Righteousness
+	},
+	[114250] = 20271, -- Selfless Healer <= Judgement
+	[ 86700] = 86698, -- Ancient Power <= Guardian of Ancient Kings
 }, {
 	-- Map aura to modified spell(s)
+	[114250] = 19750, -- Selfless Healer => Flash of Light
+	[ 31868] = 19750, -- Supplication => Flash of Light
 })
