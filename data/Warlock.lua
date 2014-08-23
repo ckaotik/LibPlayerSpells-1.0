@@ -84,6 +84,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 5, {
 			114635, -- Ember Tap
 			117828, -- Backdraft (buff)
 			122351, -- Molten Core
+			104232, -- Rain of Fire (indicator)
 		},
 		HELPFUL = {
 			[5697] = "UNIQUE_AURA", -- Unending Breath
@@ -122,6 +123,8 @@ lib:__RegisterSpells("WARLOCK", "50400", 5, {
 	[ 47960] = 105174, -- Shadowflame <= Hand of Gul'dan
 	[117828] = 117896, -- Backdraft
 	[124915] = 124916, -- Chaos Wave (Metamorphosis)
+	[   348] = {348, 108686}, -- Immolate
+	[108686] = {348, 108686}, -- Immolate F&B
 }, {
 	-- Map aura to modified spell(s)
 	[108563] = { -- Backlash =>
