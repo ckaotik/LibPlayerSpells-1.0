@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "50400", 4, {
+lib:__RegisterSpells("DEATHKNIGHT", "50400", 5, {
 	COOLDOWN = {
 		42650, -- Army of the Dead
 		61999, -- Raise Ally
@@ -54,6 +54,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 4, {
 					 55233, -- Vampiric Blood
 					113072, -- Might of Ursoc (Symbiosis)
 					115018, -- Desecrated Ground
+					 42650, -- Armoy of the Dead (for damage reduction while chaneling)
 				},
 			},
 		},
@@ -64,8 +65,8 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 4, {
 			114851, -- Blood Charge
 			  3714, -- Path of Frost
 			 48263, -- Blood Presence
-			 48265, -- Unholy Presence
 			 48266, -- Frost Presence
+			 48265, -- Unholy Presence
 			 81141, -- Crimson Scourge
 			 51124, -- Killing Machine
 			 59052, -- Freezing Fog
@@ -78,6 +79,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 4, {
 		},
 		HELPFUL = {
 			115635, -- Death Barrier
+			 77535, -- Blood Shield
 		},
 		HARMFUL = {
 			 55095, -- Frost Fever
@@ -113,6 +115,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 4, {
 	[ 91802] =  47482, -- Shambling Rush <= Leap (Ghoul)
 	[ 91800] =  47481, -- Gnaw (Ghoul)
 	[ 91797] =  47481, -- Monstrous Blow <= Gnaw (Ghoul)
+	[ 77535] =  49998, -- Blood Shield to Blood Strike
 	-- map spell id to provider?
 	[ 45477] =  58631, -- Icy Touch <= Glyph of Icy Touch
 
